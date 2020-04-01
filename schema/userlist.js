@@ -1,0 +1,97 @@
+const mongoose = require('mongoose');
+const userSchema = new mongoose.Schema({
+   name:{
+    type:String,
+    required:[true,'No name']
+   },
+   adharno:{
+    type:String
+   },
+   phoneno:{
+    type:String,
+    required:[true,"No Phone"]
+   },
+   acode:{
+    type:String
+   },
+   uuid:{
+    type:String
+   },
+   gname:{
+    type:String,
+    required:[true,'No Guardian name']
+   },
+   mname:{
+    type:String
+   },
+   address:{
+    type:String
+   },
+   age:{
+    type:String
+   },
+   dob:{
+    type:String
+   },
+   gender:{
+    type:String
+   },
+   caste:{
+    type:String
+   },
+   religion:{
+    type:String
+   },
+   fstatus:{
+    type:String
+   },
+   mstatus:{
+    type:String
+   },
+   phystatus:{
+    type:String
+   },
+   pstatus:{
+    type:String
+   },
+   category:{
+    type:String
+   },
+   pvac:[{
+    vname:String,
+    date:Date,
+    vcode:String,
+    dose:String,
+    route:String,
+    site:String
+   }],
+   uvac:[{
+    vname:String,
+    date:Date,
+    vcode:String,
+    dose:String,
+    route:String,
+    site:String
+   }],
+   record:[{
+    problem:String,
+    date:String,
+    supplement:String,
+    duration:String,
+    dose:String
+   }],
+   growth:[{
+    height:String,
+    weight:String,
+    date:String
+   }],
+   lat:{
+    type:String
+   },
+   long:{
+    type:String
+   }
+})
+const User = mongoose.model('User',userSchema);
+
+module.exports = User;

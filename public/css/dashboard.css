@@ -1,0 +1,338 @@
+.goog-te-banner-frame.skiptranslate{
+    display: none !important;
+    } 
+.backbutton{
+	float: right;
+	text-decoration: none;
+	font-size: 1.2rem;
+	color: blue;
+}
+.vaccinelistname{
+	text-align: left;
+	font-size: 1.4rem;
+	color: #465881;
+}
+body {
+    top: 0px !important;  
+     min-height: 100vh;
+     font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    font-family: Poppins, sans-serif;
+    text-align: center;
+    padding-top: 30px; 
+    padding-bottom: 20px;
+ }
+#google_translate_element{
+	position: absolute;
+	top: 30%;
+	right: 8px;
+}
+#google_translate_element img
+{
+    display: none !important;
+}
+.goog-tooltip {
+    display: none !important;
+}
+.goog-tooltip:hover {
+    display: none !important;
+}
+.goog-text-highlight {
+    background-color: transparent !important;
+    border: none !important; 
+    box-shadow: none !important;
+}
+.dash{
+	font-size: 2rem !important;
+}
+.topbar{
+	 background: #283149;
+	color: #dcdcdc;
+	box-shadow: 0px 4px 4px #283149;
+}
+.sidenav{
+	 background: #404b69;
+	color: #dcdcdc;
+}
+.name{
+	font-size: 1.5rem;
+	padding: 20px 0px;
+	text-align: left !important;
+}
+.name a{
+	margin: auto 8px !important;
+}
+.links{
+	font-size: 1.4rem;
+}
+.main{
+
+}
+.feeddiv{
+	margin: 0px auto 10px !important;
+}
+.feedbox{
+	border-radius: 5px;
+	margin: auto;
+	padding: auto;
+	color: #465881 !important;
+	background-color: white !important;
+}
+.leftfeedbox{
+	top: 10% !important;
+	position: relative!important;
+	padding: auto !important;
+	margin: auto !important;
+	text-align: left !important;
+	width: 70% !important;
+	height: 100% !important;
+	display: inline-block !important;
+}
+.leftfeedbox h1{
+	padding: auto !important;
+	margin: auto !important;
+}
+.leftfeedbox h5{
+	padding: auto !important;
+	margin: auto !important;
+	margin-bottom: 10px !important;
+}
+.rightfeedbox{
+	text-align: center !important;
+	margin: auto !important;
+	padding: auto !important;
+	vertical-align: top;
+	width: 30% !important;
+	height: 100% !important;
+	display: inline-block;
+	margin-top: 20px !important;
+}
+.rightfeedbox i{
+	margin: auto !important;
+	padding: auto !important;
+	vertical-align: middle;
+}
+.feedboxhr{
+	margin: 0 !important;
+	padding: 0 !important;
+	width: 30%;
+	height: 0;
+	padding-bottom: 5px !important;
+	border-top: 2px solid #465881 !important;
+}
+.mapdiv{
+	text-align: left !important;
+	border-radius: 5px;
+	margin: auto;
+	padding: auto;
+	color: #465881 !important;
+	background-color: white !important;
+	height: 350px !important;
+}
+.divmapdiv{
+	height: 80%;
+	width: 100%;
+}
+.mapdiv h5{
+	margin: 10px 0 !important;
+	color: #465881 !important;
+}
+.map{
+	width: 100%;
+	height: 100%;	
+}
+.feedsdiv{
+	margin: 0 !important;
+	padding: 0 !important;
+	border-radius: 5px !important;
+    color: #465881 !important;
+}
+.upto600feeds{
+	padding-right: 8px;
+}
+.upto600stats{
+	padding-left: 8px;
+}
+.feedtable{
+	width: 100% !important;
+	overflow-x: auto !important;
+}
+.form-adduser{
+	padding: 24px 0 !important;
+}
+.field{
+	text-align: left !important;
+	margin-bottom: 20px !important;
+	overflow: auto !important;
+}
+.field label{
+	color: #465881 !important;
+	font-size: 0.9rem !important;
+}
+.field input,select{
+	background-color: #fff !important;
+	color: #465881 !important;
+}
+.addusersubmit{
+	background-color: #465881 !important;
+	color: #dcdcdc !important;
+	font-size: 1.2rem;
+	border-radius: 5px;
+	margin-top: 20px !important;
+	width: 100%;
+    font-family: Poppins, sans-serif;
+    margin: auto;
+}
+.addusersubmit2{
+	background-color: #465881 !important;
+	color: #dcdcdc !important;
+	font-size: 1.2rem;
+	border-radius: 5px;
+	margin-top: 20px !important;
+	width: 40%;
+    font-family: Poppins, sans-serif;
+    margin: auto;
+}
+.formdiv{
+	border-radius: 5px;
+}
+.buttondiv{
+	overflow: auto !important;
+}
+.buttondiv2{
+	overflow: auto !important;
+	padding-bottom: 30px;
+	width: 100px;
+}
+.removehead{
+	text-align: left;
+	color: #465881 !important;
+	padding:  16px 16px  0 !important;
+}
+.datehead{
+	text-align: left;
+	color: #465881 !important;
+	padding: 0px 16px !important;
+	margin-bottom:  -24px !important;
+}
+.meals{
+	text-align: center;
+	color: #465881 !important;
+	font-size: 3rem;
+}
+.nutrition-graph{
+	height: 300px;
+	width: 100%;
+	margin-bottom: 20px !important;
+}
+.vaccinesearch{
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+	width: 70%;
+}
+.refercard{
+	z-index: 3 !important;
+	width: 40% !important;
+	margin: auto !important;
+	color: #465881 !important;
+	text-align: left !important;
+}
+.refercardhead{
+	background-color: #465881 !important;
+	color: #dcdcdc !important;
+	text-align: left !important;
+}
+@media only screen and (max-width: 992px){
+	.mapdiv{
+		height: 300px !important;
+	}
+	.divmapdiv{
+		height: 78%;
+	}
+	.refercard{
+		width: 50% !important;
+	}
+}
+@media only screen and (max-width: 761px){
+	.mapdiv{
+		height: 250px !important;
+	}
+	.divmapdiv{
+		height: 75%;
+	}
+	.refercard{
+		width: 60% !important;
+	}
+}
+@media only screen and (max-width: 600px){
+	.links{
+		font-size: 1.4rem;
+	}
+	.mapdiv{
+		height: 250px !important;
+	}
+	.upto600feeds{
+		padding-right: 0;
+	}
+	.upto600stats{
+		padding-left: 0;
+	}
+	.addusersubmit, .addusersubmit2{
+		width: 40%;
+	}
+	.refercard{
+		width: 70% !important;
+	}
+}
+@media only screen and (max-width: 481px){
+	.links{
+		font-size: 1.3rem;
+	}
+	.mapdiv{
+		height: 200px !important;
+	}
+	.divmapdiv{
+		height: 70%;
+	}
+	.addusersubmit, .addusersubmit2{
+		width: 60%;
+	}
+	.refercard{
+		width: 80% !important;
+	}
+}
+@media only screen and (max-width: 300px){
+	.sidenav{
+		width: 100% !important;
+	}
+	.links{
+		font-size: 1.2rem;
+	}
+	.mapdiv{
+		height: 200px !important;
+	}
+	body{
+		font-size: 0.9rem;
+	}
+	.buttondiv{
+		font-size: 0.9rem;
+	}
+	.addusersubmit, .addusersubmit2{
+		font-size: 0.9rem;
+		width: 100%;
+	}
+	.nutrition-graph{
+		height: 250px;
+	}
+	.removehead{
+		font-size: 1.4rem;
+	}
+	.vaccinelistdiv h5{
+		font-size: 0.9rem;
+	}
+	.refercard{
+		width: 90% !important;
+	}
+}

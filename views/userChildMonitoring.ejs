@@ -1,0 +1,74 @@
+<%- include("partials/dashboard-header"); -%>
+        
+        
+
+<div class="w3-panel" style="margin: 0 8px;">
+  <div class="w3-half vaccinelistname">
+    Name : &emsp; <strong><%=result.name%></strong>
+  </div>
+  <div class="w3-half">
+    <a href="/dashboard/childMonitoring" class="backbutton">< back</a>
+
+  </div>
+</div>
+<input type="text" name="hiddenuid" style="display: none;" id="uuuid" value="<%=result.uuid%>">
+<div class="w3-panel" >
+  <div class="w3-white w3-row-padding formdiv">
+    <div class="w3-container">
+    <form class="form-adduser" action="/dashboard/addUserGrowth" method="POST" id="editform" >
+        <input type="text" name="uuid" style="display:none" value=<%=result.uuid%> >
+        <h3 class="removehead" id="edithead" style="margin-bottom: 24px;">Add new entry for Height and Weight</h3>
+          <div class="w3-row-padding">
+            <div class="field w3-third">
+                <label class="w3-text">Height <span class="w3-text-red">*</span></label>
+                <input required name="height" placeholder="New entry for Height" id="vcode" class="w3-input w3-hover-light-grey w3-border" type="text">
+              </div>
+              <div class="field w3-third">
+                <label class="w3-text">Weight <span class="w3-text-red">*</span></label>
+                <input required name="weight" placeholder="New entry for Height" id="vcode" class="w3-input w3-hover-light-grey w3-border" type="text">
+              </div>
+               <div class="w3-third buttondiv">
+              <input type="submit" class="w3-button addusersubmit" value="Add">
+            </div> 
+            </div>
+          </form>
+      </div>
+    </div>
+  </div>
+
+
+
+<div class="w3-panel" >
+  <div class="w3-white w3-row-padding formdiv">
+    <div class="w3-container">
+      <h2 class="removehead">Height Statistics</h2>
+
+        <div id="curve_chart1" class="nutrition-graph"></div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<div class="w3-panel" >
+  <div class="w3-white w3-row-padding formdiv">
+    <div class="w3-container">
+      <h2 class="removehead">Weight Statistics</h2>
+
+        <div id="curve_chart2" class="nutrition-graph"></div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+    </div>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="./js/growth-graph.js"></script>
+      
+    <%- include("partials/dashboard-footer"); -%>

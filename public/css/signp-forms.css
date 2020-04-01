@@ -1,0 +1,15 @@
+.form-section{
+    width: 80vw;
+    margin: 4rem auto;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 12px;
+}
+
+.form-container{
+    width: 400px;
+    padding: 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+

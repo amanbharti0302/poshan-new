@@ -1,0 +1,119 @@
+<%- include("partials/dashboard-header"); -%>
+        
+        
+
+<div class="w3-panel" style="margin: 0 8px;">
+  <div class="w3-half vaccinelistname">
+    Name : &emsp; <strong><%=result.name%></strong>
+  </div>
+  <div class="w3-half">
+    <a href="/dashboard/vaccinelist" class="backbutton">< back</a>
+
+  </div>
+</div>
+
+<div class="w3-panel" >
+  <div class="w3-white w3-row-padding formdiv">
+    <div class="w3-container">
+    <form class="form-adduser" action="/dashboard/addUserVaccine" method="POST" id="editform" >
+        <input type="text" name="uuid" style="display:none" value=<%=result.uuid%> >
+        <h3 class="removehead" id="edithead" style="margin-bottom: 24px;">Add a Vaccine</h3>
+          <div class="w3-row-padding">
+            <div class="field w3-quarter">
+                <label class="w3-text">VCODE <span class="w3-text-red">**</span></label>
+                <input required name="vcode" placeholder="Same as in vaccine list" id="vcode" class="w3-input w3-hover-light-grey w3-border" type="text">
+              </div>
+               <div class="field w3-quarter">
+                <label class="w3-text">Vaccine name <span class="w3-text-red">*</span></label>
+                <input required name="vaccine" id="vaccine" class="w3-input w3-hover-light-grey w3-border" type="text">
+              </div>
+              <div class="field w3-quarter">
+                <label class="w3-text">Due date <span class="w3-text-red">*</span></label>
+                <input required name="date" id="date" class="w3-input w3-hover-light-grey w3-border" type="date">
+              </div>
+               <div class="w3-quarter buttondiv">
+              <input type="submit" class="w3-button addusersubmit" value="Add">
+            </div> 
+            </div>
+          </form>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="w3-panel" id="upcomingevent">
+  <div class="w3-white w3-row-padding formdiv">
+    <div class="w3-container">
+    <h2 class="removehead" id="removeheader" style="margin-bottom: 24px;margin-right: 0">Upcoming Vaccinations:</h2>
+
+
+
+    <ul class="w3-ul" style="text-align: left;color: #465881;">
+      <% var uvac=result.uvac %>
+      <% for(var i=1;i<uvac.length;i++) { %>
+
+         <li class="w3-bar">
+           <div class="w3-bar-item">
+              <span style="font-size: 2rem;"><%=uvac[i].vname%></span>
+              <form style="display: inline;" action="/dashboard/doneUpcomingUserVaccine" method="post">
+                  <input type="text" name="uuid" style="display:none" value=<%=result.uuid%> >
+                  <input type="text" name="vcode" style="display:none" value=<%=uvac[i].vcode%> >
+                  <input type="text" name="date" style="display:none" value="<%=uvac[i].date%>" >
+                  <input type="checkbox" style="width: 30px;height: 30px" name="check" onChange="this.form.submit()">
+                </form><br>
+              <span>VCODE: <%=uvac[i].vcode%>ml &emsp; Dose: <%=uvac[i].dose%>ml  &emsp;Site: <%=uvac[i].site%>  &emsp;  Route: <%=uvac[i].route%></span>
+              <br><span style="color: #ff5d6c;">Due: <%=uvac[i].date%></span>
+            </div>
+          </li>
+        <%}%>
+    </ul>
+  </div> 
+</div>
+</div>
+
+
+<div class="w3-panel" id="upcomingevent">
+  <div class="w3-white w3-row-padding formdiv">
+    <div class="w3-container">
+    <h2 class="removehead" id="removeheader" style="margin-bottom: 24px;margin-right: 0">Previous Vaccinations:</h2>
+
+
+
+    <ul class="w3-ul" style="text-align: left;color: #465881;">
+      <% var pvac=result.pvac %>
+      <% for(var i=1;i<pvac.length;i++) { %>
+      <li class="w3-bar">
+       <div class="w3-bar-item">
+          <span style="font-size: 2rem;"><%=pvac[i].vname%></span><br>
+          <span>VCODE: <%=pvac[i].vcode%> &emsp;Dose: <%=pvac[i].dose%>ml &emsp; Site: <%=pvac[i].site%>  &emsp;  Route: <%=pvac[i].route%></span>
+          <br><span style="color: #0c9463;">Done: <%=pvac[i].date%></span>
+
+        </div>
+      </li>
+      <%}%>
+
+    </ul>
+
+  </div> 
+</div>
+</div>
+
+
+
+    </div>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+      
+    <%- include("partials/dashboard-footer"); -%>

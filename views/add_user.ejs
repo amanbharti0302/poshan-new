@@ -1,0 +1,187 @@
+<%- include("partials/dashboard-header"); -%>
+        
+        <!-- !PAGE CONTENT! -->
+        
+          
+          <!--------------------------------------------------------------------------------------------------------------------------------->
+        <!------Form-------->
+
+<div class="w3-panel" >
+  <div class="w3-white w3-row-padding formdiv">
+    <div class="w3-container">
+        <form class="form-adduser" action="/dashboard/adduser/newUser" method="post">
+
+
+
+
+          <div class="w3-row-padding">
+            <div class="field w3-half">
+              <label class="w3-text">Name <span class="w3-text-red">*</span></label>
+              <input required class="w3-input w3-hover-light-grey w3-border" id="name" name="name" type="text">
+            </div>
+            <div class="w3-half field">
+                <label class="w3-text">Aadhaar Number</label>
+                <input class="w3-input w3-hover-light-grey w3-border" name="adharno" type="text">
+              </div>
+          </div>
+          <div class="w3-row-padding">
+            <div class="field w3-half">
+              <label class="w3-text">Father's/Guardian's Name <span class="w3-text-red">*</span></label>
+              <input required class="w3-input w3-hover-light-grey w3-border" name="gname" type="text">
+            </div>
+            <div class="w3-half field">
+                <label class="w3-text">Mother's Name</label>
+                <input class="w3-input w3-hover-light-grey w3-border" name="mname" type="text">
+              </div>
+          </div>
+
+          <div class="w3-row-padding">
+            <div class="field w3-half">
+              <label class="w3-text">Phone Number <span class="w3-text-red">*</span></label>
+              <input required class="w3-input w3-hover-light-grey w3-border" id="phoneno" name="phoneno" type="text">
+            </div>
+            <div class="w3-half field">
+                <label class="w3-text">Area Code <span class="w3-text-red">*</span></label>
+                <input readonly required class="w3-input w3-hover-light-grey w3-border" name="acode" type="text">
+              </div>
+          </div>
+
+
+          <div class="w3-row-padding"> 
+            <div class="field w3-half">
+              <label class="w3-text">Date of Birth <span class="w3-text-red">*</span></label>
+              <input required class="w3-input w3-hover-light-grey w3-border" name="dob" type="date">
+            </div>
+            <div class="w3-half field">
+                <label class="w3-text">Age <span class="w3-text-red">*</span></label>
+                <input required class="w3-input w3-hover-light-grey w3-border" name="age" type="text">
+            </div>
+          </div>
+          
+          <div class="w3-row-padding">
+            <div class="field" style="margin: 0 8px;">
+             <label class="w3-text">Address <span class="w3-text-red">*</span></label>
+                <input required class="w3-input w3-hover-light-grey w3-border" name="address" type="text">
+              </div>
+          </div>
+          <div class="w3-row-padding">
+            <div class="w3-half field">
+              <label class="w3-text">Gender <span class="w3-text-red">*</span></label>
+              <select required class="w3-input w3-hover-light-grey w3-border" name="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Others</option>
+              </select>
+            </div>
+            <div class="w3-half field">
+              <label class="w3-text">Category <span class="w3-text-red">*</span></label>
+              <select required class="w3-input w3-hover-light-grey w3-border" name="category">
+                <option value="child">Child</option>
+                <option value="predelivery">Pre-Delivery</option>
+                <option value="postdelivery">Post-Delivery</option>
+              </select>
+            </div>
+          </div>
+
+
+
+          <div class="w3-row-padding">
+            <div class="w3-half field">
+              <label class="w3-text">Caste <span class="w3-text-red">*</span></label>
+              <select required class="w3-input w3-hover-light-grey w3-border" name="caste">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+            <div class="w3-half field">
+              <label class="w3-text">Religion <span class="w3-text-red">*</span></label>
+              <select required class="w3-input w3-hover-light-grey w3-border" name="religion">
+                <option value="Hinduism">Hinduism</option>
+                <option value="Muslim">Muslim</option>
+                <option value="Sikh">Sikh</option>
+                <option value="Christian">Christian</option>
+                <option value="Others">Others</option>
+              </select>
+            </div>
+          </div>
+
+
+
+          <div class="w3-row-padding">
+            <div class="w3-half field">
+              <label class="w3-text">Marital Status <span class="w3-text-red">*</span></label>
+              <select required class="w3-input w3-hover-light-grey w3-border" name="mstatus">
+                <option value="married">Married</option>
+                <option value="unmarried">Unmarried</option>
+              </select>
+            </div>
+            <div class="w3-half field">
+              <label class="w3-text">Financial Status <span class="w3-text-red">*</span></label>
+              <select required class="w3-input w3-hover-light-grey w3-border" name="fstatus">
+                <option value="apl">A.P.L.</option>
+                <option value="bpl">B.P.L.</option>
+              </select>
+            </div>
+          </div>
+
+
+          <div class="w3-row-padding">
+            <div class="w3-half field">
+              <label class="w3-text">Any Abnormality <span class="w3-text-red">*</span></label>
+              <select required class="w3-input w3-hover-light-grey w3-border" name="phystatus">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <div class="w3-half field">
+              <label class="w3-text">Are you present at his/her home <span class="w3-text-red">*</span></label>
+              <select required class="w3-input w3-hover-light-grey w3-border" name="pstatus">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="w3-row-padding">
+            <div class="field" id="uuidContainer" style="display:none;margin: 0 8px;">
+              <label class="w3-text">UID <span class="w3-text-red">*</span></label>
+              <input class="w3-input w3-hover-light-grey w3-border" readonly id="uuid" name="uuid" type="text">
+            </div>
+          </div>
+        <input type="text" id="lat" name="lat" style="display:none">
+        <input type="text" id="long" name="long" style="display:none">
+          <div class="w3-row-padding">
+          
+        <div class="w3-third" id="uuidCont">
+          <button class="w3-button addusersubmit" onclick="uuidGenerator(event)" id="uuidbtn" >Generate UID</button>
+        </div>
+        <div class="w3-third" style="display:none;" id="printCont">
+          <button class="w3-button addusersubmit"  id="printbtn" onclick="printfun(event)" >Print</button>
+        </div> 
+        <div class="w3-third">
+          <button class="w3-button addusersubmit" onclick="getLocation(event)">Add Location</button>
+        </div> 
+        <div class="w3-third">
+          <input type="submit" class="w3-button addusersubmit" value="Submit">
+        </div>  
+        </div>              
+    </form>
+  </div>
+</div>
+</div>
+<div class="w3-container" id="map-container" style="display: none;">
+<div class="w3-row-padding w3-white mapdiv">
+              <h5>Current Location</h5>
+              <div class="w3-tw divmapdiv" >
+<iframe id="mapwa"  frameborder="0" class="map"></iframe>
+ </div>
+              
+            </div>
+          </div>
+    </div>
+  </div>
+</div>
+
+      
+    <%- include("partials/dashboard-footer"); -%>

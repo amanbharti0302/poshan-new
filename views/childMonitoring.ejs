@@ -1,0 +1,41 @@
+<%- include("partials/dashboard-header"); -%>
+        
+
+
+<div class="w3-panel" >
+  <div class="w3-white w3-row-padding formdiv">
+    <div class="w3-container">
+      <form class="form-adduser" id="removeform" action="/dashboard/userChildMonitoring" method="post">
+ 
+
+
+
+          <div class="w3-row-padding">
+            <div class="field w3-threequarter">
+              <label class="w3-text">UID <span class="w3-text-red">*</span></label>
+              <input required placeholder="Enter uid to see user's growth monitoring" class="w3-input w3-hover-light-grey w3-border" id="uuid" name="uuid" type="text">
+            </div>
+            <div class="w3-quarter buttondiv">
+              <button class="w3-button addusersubmit"  id="checkUserbtn">Search</button>
+              <input type="submit" id="searchUserbtn" style="display:none" class="w3-button addusersubmit" value="Submit">
+            </div> 
+          </div>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+
+ 
+      
+    </div>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="./js/childMonitoring-js.js"></script>
+
+      
+    <%- include("partials/dashboard-footer"); -%>

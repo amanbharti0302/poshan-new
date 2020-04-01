@@ -1,0 +1,127 @@
+<%- include("partials/dashboard-header"); -%>
+        
+
+
+
+
+        <div class="w3-panel" style="margin: 0 8px;">
+  <div class="w3-half vaccinelistname">
+    Name : &emsp; <strong><%=result.name%></strong>
+  </div>
+  <div class="w3-half">
+    <a href="/dashboard/checkup" class="backbutton">< back</a>
+
+  </div>
+</div>
+
+
+  	<div class="w3-panel" >
+  <div class="w3-white w3-row-padding formdiv">
+    <div class="w3-container">
+
+
+        <h3 class="removehead" id="edithead" style="margin-bottom: 24px;">Add New Record <i class="fas fa-chevron-down w3-right" style="font-size: 2rem"></i></h3>
+        <form class="form-adduser" id="editform" action="/dashboard/newRecord" method="post">
+
+
+          <input type="text" name="uuid" value="<%=result.uuid%>" style="display:none">
+          <div class="w3-row-padding">
+            <div class="field w3-half">
+
+            	<label class="w3-text">Problem <span class="w3-text-red">*</span></label>
+              <input required name="problem" class="w3-input w3-hover-light-grey w3-border" type="text">
+
+              </div>
+               <div class="field w3-half">
+                <label class="w3-text">Supplement <span class="w3-text-red">*</span></label>
+                <input required name="supplement" class="w3-input w3-hover-light-grey w3-border" type="text">
+              </div>
+              
+            </div>
+            <div class="w3-row-padding">
+            	<div class="field w3-third">
+                <label class="w3-text">Dose <span class="w3-text-red">*</span></label>
+                <input name="dose" required class="w3-input w3-hover-light-grey w3-border" type="text">
+              </div>
+              <div class="field w3-third">
+                <label class="w3-text">Duration <span class="w3-text-red">*</span></label>
+                <input required name="duration" class="w3-input w3-hover-light-grey w3-border" type="text">
+              </div>
+               <div class="w3-third buttondiv">
+              <input type="submit" class="w3-button addusersubmit" value="Add">
+            </div> 
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-panel" >
+  <div class="w3-white w3-row-padding formdiv">
+    <div class="w3-container">
+
+
+        <h3 class="removehead" id="edithead" style="margin-bottom: 24px;">Refer <i class="fas fa-chevron-down w3-right" style="font-size: 2rem"></i></h3>
+
+            <div class="w3-row-padding">
+              <div class="field w3-half">
+                <label class="w3-text">Problem <span class="w3-text-red">*</span></label>
+                <input required id="referal" class="w3-input w3-hover-light-grey w3-border" type="text">
+              </div>
+               <div class="w3-half buttondiv">
+              <button id="referalbtn" class="w3-button addusersubmit">Refer</button>
+            </div> 
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+<div class="w3-container w3-center ">
+  <div class="w3-white w3-row-padding formdiv">
+    <div class="w3-container" style="text-align: left;color: #465881;">
+    	<h2 class="recordhead" id="" style="margin-bottom: 24px;margin-right: 0">Records :</h2>
+
+
+    <% const record=result.record%>  
+      <% for(var i=1;i<record.length;i++) { %>
+           <h3 class="removehead" id="" style="margin-bottom: 24px;margin-right: 0"><%=record[i].supplement%><i class="fas fa-chevron-down w3-right" style="font-size: 2rem"></i></h3>
+           <div class="vaccinelistdiv" style="padding: 0 0 0 16px ;">
+           	<h5><strong>Problem :&emsp;</strong><%=record[i].problem%></h5>
+             <h5><strong>Date :&emsp;</strong><%=record[i].date%></h5>
+             <h5><strong>Duration :&emsp;</strong><%=record[i].duration%></h5>
+             <h5><strong>Dose :&emsp;</strong><%=record[i].dose%></h5>
+           </div>
+             <%}%>
+           </div>
+</div>
+</div>
+  
+
+
+
+    
+  <div id="id01" class="w3-modal" >
+    <div class="w3-modal-content refercard">
+        <header class="w3-container refercardhead">
+            <h3>Referred to a nearby hospital
+              <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+            </h3>
+            </header>
+
+          <div class="w3-container">
+            <h5><strong>Name :&emsp;</strong><%=result.name%></h5>
+             <h5 id="referalDate"><strong>Date :&emsp;</strong></h5>
+             <h5 id="referalProblem"><strong>Problem :&emsp;</strong>xxx</h5>
+             <h5><strong>Age :&emsp;</strong><%=result.age%></h5>
+             <div class="buttondiv2">
+              <input type="submit" class="w3-button addusersubmit" onclick="printfun(event)" value="Print">
+            </div>
+          </div>
+        </div>
+      </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="./js/userCheckup-js.js"></script>
+      
+    <%- include("partials/dashboard-footer"); -%>

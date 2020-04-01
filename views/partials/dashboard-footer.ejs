@@ -1,0 +1,72 @@
+
+<!--   </section>
+         
+          <footer class="w3-container w3-padding-16 w3-light-grey">
+            <h4>FOOTER</h4>
+            <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+          </footer>
+        
+         
+        </div>
+      </section> -->
+        
+        <script src="https://kit.fontawesome.com/5afa70d346.js" crossorigin="anonymous"></script>
+        <script src="./js/dashboard.js"></script> 
+        <script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'bn,en,gu,hi,kn,pa,ml,mr,ta,te,ur', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script><script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script>
+function getLocation(e) {
+  e.preventDefault();
+  document.getElementById("map-container").style.display="block";
+  if (navigator.geolocation) {
+    navigator.geolocation.watchPosition(showPosition);
+  } else { 
+    alert("Geolocation is not supported by this browser.");
+  }
+}
+    
+function showPosition(position) {
+  document.getElementById("lat").value=position.coords.latitude;
+  document.getElementById("long").value=position.coords.longitude;
+  console.log("Ho raha hai");
+  var mapwa=document.getElementById("mapwa");
+  var src="https://maps.google.com/maps?q="+position.coords.latitude+","+position.coords.longitude+"&t=&z=17&ie=UTF8&iwloc=&output=embed";
+  mapwa.setAttribute("src",src);
+}
+function forSplit(a) {
+  var res=a.split(" ");
+  return res[0];
+
+  }
+function uuidGenerator(e)
+{
+  e.preventDefault();
+  console.log("uuid called");
+  var name=document.getElementById("name").value;
+  var phoneno=document.getElementById("phoneno").value;
+  if(name!=""&&phoneno!=""){
+  var field=document.getElementById("uuidContainer");
+  var btn=document.getElementById("uuidbtn");
+  var a=forSplit(name);
+  var uuid=phoneno+a;
+  document.getElementById("uuidContainer").style.display="block";
+  document.getElementById("uuid").value=uuid;
+  document.getElementById("uuidCont").style.display="none";
+  document.getElementById("printCont").style.display="block";}
+  else
+    alert("Firstly Fill the form");
+}
+function printfun(e)
+{
+  e.preventDefault();
+  window.print();
+}
+</script>
+</body>
+</html>

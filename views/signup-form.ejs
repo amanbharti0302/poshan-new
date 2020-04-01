@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Signup Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/login-formstyles.css">
+</head>
+<body>
+<div  id="google_translate_element"></div>
+    <div class="form-container2 d-flex justify-content-center">  
+        <form action="/signupSubmit" method="post">
+            <div class=" form-section2">
+            <p class="display-4 my-2 text-center">Create Account</p>
+                <div class="form-group2">
+                    <label for="name">Name</label>
+                    <input id="name" required type="text" name="name" placeholder="Enter your name..">
+                </div>
+                <div class="form-group2">
+                    <label for="fathersName">Father's Name</label>
+                    <input type="text" required id="fathersName" name="fname" placeholder="Enter your father's name..">
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group2">
+                            <label for="dob">Date of Birth</label>
+                            <input type="date" required name="dob" id="dob">
+                        </div>
+                    </div>
+                    <div class="col">
+                            <div class="form-group2">
+                                <label for="sel1">Gender:</label>
+                                <select name="gender" required style="height: 40px;" id="sel1">
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Others">Others</option>
+                                    
+                                </select>
+                            </div>
+                    </div>
+                </div>
+                 <div class="form-group2">
+                    <label for="adhaar">Aadhar Number</label>
+                    <input id="adhaar" name="adhaar" readonly type="text" placeholder="Enter Aadhar Number.." value=<%=adhaar%>>
+                </div>
+                <!--<div class="form-group">
+                    <label for="email">Phone Number</label>
+                    <input type="text" class="form-control" placeholder="Enter Phone Number..">
+                </div> -->
+                
+                <div class="form-group2">
+                    <label for="password">Password</label>
+                    <input type="password" required id="password" name="password" placeholder="Enter your password..">
+                </div>
+                <div class="form-group2">
+                    <label for="Cpassword">Confirm Password</label>
+                    <input type="password"  required id="Cpassword" name="Cpassword" placeholder="Enter your password..">
+                </div>
+                <div class="form-group submit-btn">
+                    <input type="submit" id="submit" class="btn btn-danger submit" >
+                </div>
+                <div class="form-group2">
+                    <a href="/login">Go Back</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="./js/signup-form-js.js">
+    </script>
+    <script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'bn,en,gu,hi,kn,ml,mr,ta,te,ur', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<%- include("partials/dashboard-header"); -%>
+        
+   <div class="w3-panel" >
+  <div class="w3-white w3-row-padding formdiv">
+    <div class="w3-container">
+
+
+        <h6 class="datehead" id="fordate">date</h6>
+        <h3 class="removehead">Mid-Day Meals given today</h3>
+        <form class="form-adduser" id="midDayEntry" action="/dashboard/nutrition/mdm-given" method="POST">
+        <div class="w3-row-padding">
+            <div class="field w3-half" >
+              <label class="w3-text"><span class="w3-text-red">*</span></label>
+              <input required class="w3-input w3-hover-light-grey w3-border" placeholder="Number of Mid-Day Meals given today" type="number" name="number">
+            </div>
+            <div class="w3-half buttondiv" id="midDayEntrybtn">
+              <input type="submit" class="w3-button addusersubmit" value="Update">
+            </div>
+          </div>
+        </form>
+        <h1 class="meals w3-padding" id="midDayData"></h1>
+      </div>
+    </div>
+  </div>
+
+
+<div class="w3-panel" >
+  <div class="w3-white w3-row-padding formdiv">
+    <div class="w3-container">
+      <h2 class="removehead">Statistics</h2>
+
+        <div id="curve_chart" class="nutrition-graph"></div>
+      </div>
+    </div>
+  </div>
+
+
+
+       <div class="w3-panel" >
+  <div class="w3-white w3-row-padding formdiv">
+    <div class="w3-container">
+
+
+        <h3 class="removehead" id="addhead" style="margin-bottom: 24px;">Add a Child <i class="fas fa-chevron-down w3-right" style="font-size: 2rem"></i></h3>
+        <form class="form-adduser" id="addform" style="display: none" action="/dashboard/nutrition/addChild" method="POST">
+          <div class="w3-row-padding">
+            <div class="field w3-threequarter">
+              <label class="w3-text">UID <span class="w3-text-red">*</span></label>
+              <input required class="w3-input w3-hover-light-grey w3-border" type="text" id="addinput" name="uuid">
+            </div>
+            <div class="w3-quarter buttondiv">
+              <button class="w3-button addusersubmit" id="addcheckbtn">Check</button>
+              <input type="submit" id="addsubmitbtn" class="w3-button addusersubmit" style="display:none" value="Add">
+            </div> 
+          </div>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+
+   <div class="w3-panel" >
+  <div class="w3-white w3-row-padding formdiv">
+    <div class="w3-container">
+
+
+        <h3 class="removehead" id="removeheader" style="margin-bottom: 24px;">Remove a Child <i class="fas fa-chevron-down w3-right" style="font-size: 2rem"></i></h3>
+        <form class="form-adduser" id="removeform" style="display: none" action="/dashboard/nutrition/removeChild" method="post">
+
+
+
+
+          <div class="w3-row-padding">
+            <div class="field w3-threequarter">
+              <label class="w3-text">UID <span class="w3-text-red">*</span></label>
+              <input required id="removeinput" class="w3-input w3-hover-light-grey w3-border" type="text" name="uuid">
+            </div>
+            <div class="w3-quarter buttondiv">
+              <button class="w3-button addusersubmit" id="removecheckbtn">Check</button>
+              <input type="submit" id="removesubmitbtn"class="w3-button addusersubmit" style="display:none" value="Remove">
+            </div> 
+          </div>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="./js/nutrition-js.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="./js/nutrition-graph.js"></script>
+      
+    <%- include("partials/dashboard-footer"); -%>

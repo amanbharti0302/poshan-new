@@ -1,0 +1,90 @@
+<%- include("partials/dashboard-header"); -%>
+
+
+        <div class="w3-panel" id="form1" >
+  <div class="w3-white w3-row-padding formdiv">
+    <div class="w3-container">
+
+        <h3 class="removehead" id="removeheader" style="margin-bottom: 24px;margin-right: 0">Remove a User <i class="fas fa-chevron-down w3-right" style="font-size: 2rem"></i></h3>
+        <form class="form-adduser" id="removeform" style="display: none" action="/dashboard/manage-user/remove-user/" method="POST">
+
+          <div class="w3-row-padding">
+            <div class="field w3-threequarter">
+              <label class="w3-text">UID <span class="w3-text-red">*</span></label>
+              <input required class="w3-input w3-hover-light-grey w3-border" type="text" id="uuid">
+            </div>
+            <div class="w3-quarter buttondiv">
+              <input type="submit" class="w3-button addusersubmit" value="Remove" id="removeuser">
+            </div> 
+          </div>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="w3-panel" id="form2">
+    <div class="w3-white w3-row-padding formdiv">
+      <div class="w3-container">
+  
+         
+          <h3 class="removehead" id="getheader" style="margin-bottom: 24px;margin-right: 0">Get user details <i class="fas fa-chevron-down w3-right" style="font-size: 2rem"></i></h3>
+          <form class="form-adduser" id="getform" style="display: none" action="/dashboard/manage-user/get-user/" method="POST">
+  
+            <div class="w3-row-padding">
+              <div class="field w3-threequarter">
+                <label class="w3-text">UID <span class="w3-text-red">*</span></label>
+                <input required class="w3-input w3-hover-light-grey w3-border" type="text" id="uuid2">
+              </div>
+              <div class="w3-quarter buttondiv">
+                <input type="submit" class="w3-button addusersubmit" value="Get details" id="getuser">
+              </div> 
+            </div>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+  
+
+  <div class="w3-panel" id="form3" style="display: none;">
+    <div class="w3-white w3-row-padding formdiv">
+      <div class="w3-container" style="text-align: left;color: #465881;">
+             <h1 style="text-align: center;">USER DETAILS</h1> 
+          <h3 class="removehead" id="edithead" >Name : &emsp;<strong id="name">xxx</strong></h3>
+           
+            <div class="vaccinelistdiv" style="padding: 0 0 0 16px ;">
+               <h5>ID NO :&emsp;<strong id="uid">xxx</strong></h5>
+               <h5>Father's/Guardian's Name :&emsp;<strong id="fname">xxx</strong></h5>
+               <h5>Mother's Name :&emsp;<strong id="mname">xxx</strong></h5>
+               <h5>Aadhar Card :&emsp;<strong id="aadharcard">xxx</strong></h5>
+               <h5>D.O.B. :&emsp;<strong id="dob">xxx</strong></h5>
+               <h5>Phone Number :&emsp;<strong id="phno">xxx</strong></h5>
+               <h5>Area Code :&emsp;<strong id="acode">xxx</strong></h5>
+               <h5>Address :&emsp;<strong id="addr">xxx</strong></h5>
+               <h5>Gender :&emsp;<strong id="gender">xxx</strong></h5>
+               <h5>Category :&emsp;<strong id="category">xxx</strong></h5>
+               <h5>Caste :&emsp;<strong id="caste">xxx</strong></h5>
+               <h5>Religion :&emsp;<strong id="religion">xxx</strong></h5>
+               <h5>Marital Status :&emsp;<strong id="maritalstatus">xxx</strong></h5>
+               <h5>Financial Status :&emsp;<strong id="finacialstatus">xxx</strong></h5>
+               <h5>Any Abnormality :&emsp;<strong id="abnormality">xxx</strong></h5>
+             </div>
+          <div class="w3-quarter" id="printCont" style="margin-left: 20px;margin-bottom: 30px;">
+            <button class="w3-button addusersubmit2"  id="printbtn" onclick="printfun(event)" >Print</button>
+            <button class="w3-button addusersubmit2"  id="back">Go Back</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    </div>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="./js/manage_user-js.js"></script>
+      
+    <%- include("partials/dashboard-footer"); -%>

@@ -1,0 +1,146 @@
+<%- include("partials/dashboard-header"); -%>
+        
+         
+        
+        <div class="w3-row-padding ">
+            
+            <div class="w3-third feeddiv">
+              <div class="w3-container w3-blue feedbox" >
+                <div class="w3-left leftfeedbox">
+                  <h1><%=result.checknum%></h1>
+                  <hr class="feedboxhr">
+                  <h5>Checkups done</h5>
+                </div>
+                <div class="w3-right rightfeedbox">
+                  <i class="fa fa-medkit w3-xxxlarge"></i>
+                </div>
+              </div>
+            </div>
+            <div class="w3-third feeddiv">
+              <div class="w3-container w3-blue feedbox" >
+                <div class="w3-left leftfeedbox">
+                  <h1><%=result.vacnum%></h1>
+                  <hr class="feedboxhr">
+                  <h5>Vaccinations given</h5>
+                </div>
+                <div class="w3-right rightfeedbox">
+                  <i class="fa fa-capsules w3-xxxlarge"></i>
+                </div>
+              </div>
+            </div>
+            <div class="w3-third feeddiv">
+              <div class="w3-container w3-blue feedbox" >
+                <div class="w3-left leftfeedbox">
+                  <h1><%=result.usernum%></h1>
+                  <hr class="feedboxhr">
+                  <h5>Registered Users</h5>
+                </div>
+                <div class="w3-right rightfeedbox">
+                  <i class="fas fa-users w3-xxxlarge"></i>
+                </div>
+              </div>
+            </div>
+            </div>
+
+          <!-- <div class="w3-container">
+            <div class="w3-row-padding w3-white mapdiv">
+              <h3>Your Region</h3>
+              <div class="w3-tw divmapdiv" >
+                
+                <iframe src="https://maps.google.com/maps?q=nit%20patna&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" class="map"></iframe>
+              </div>
+              
+            </div>
+          </div> -->
+          <div class="w3-container" id="map-container" >
+            <div class="w3-row-padding w3-white mapdiv">
+                          <h5>Current Location</h5>
+                          <div class="w3-tw divmapdiv" >
+            <iframe id="mapwa"  frameborder="0" class="map"></iframe>
+             </div>
+                          
+                        </div>
+                      </div>
+     <div class="w3-panel" style="margin: 0 auto;">
+          <div class="" >
+            <div class="w3-full" style="">
+              <div class="w3-white feedsdiv">
+                <h2 class="removehead" id="removeheader" style="margin-bottom: 24px;margin-right: 0">Today Due Doses : </h2>
+                  <ul class="w3-ul" style="text-align: left;color: #465881;width: 100%;">
+
+                  <%if(result.feed!="undefined"){%>
+                  <% var d=new Date();d.setHours( d.getHours() + 5 );%>
+                  <%d.setDate(d.getDate() +2)%>
+                  <% d.setMinutes( d.getMinutes() + 30);console.log(d);%>
+                  <% var t=d.getTime();%>
+                  <%var dateObj1 = new Date();console.log(dateObj1);%> 
+                    <%dateObj1.setHours( dateObj1.getHours() + 5 );%>
+                  <% dateObj1.setMinutes( dateObj1.getMinutes() + 30);console.log(dateObj1);%>
+                    <% var t2=dateObj1.getTime()%> 
+                    <% for(var i=0;i<(result.feed).length;i++){%>
+                    <% if((result.feed[i]).date.getTime()<=t&&(result.feed[i]).date.getTime()>=t2){%>
+                  <li class="w3-bar" style="width: 100%;">
+                   <div class="w3-bar-item" style="width: 100%;">
+                    <div class="w3-left">
+                      <span style="font-size: 1.5rem;">Name:&emsp;<strong><%=(result.feed[i]).name%></strong></span><br>
+                      <span>uid: <%=(result.feed[i]).uuid%> &emsp;Vaccine: <%=(result.feed[i]).vcode%> &emsp;Dated: <%=(result.feed[i]).date%></span>
+                    </div>
+                    <div class="w3-right">
+                        <i id="<%=result.feed[i].phoneno%>" class="fa fa-envelope fa-2x oof"></i>
+                      </div>
+
+                    </div>
+                  </li>
+                  <% console.log("hmm");} } }%>
+                  
+                </ul>
+              </div>
+            </div>
+         </div>
+       </div>
+
+
+<div class="w3-panel" style="margin: 0 auto;">
+          <div class="" >
+            <div class="w3-full" style="">
+              <div class="w3-white feedsdiv">
+                <h2 class="removehead" id="removeheader" style="margin-bottom: 24px;margin-right: 0">Previous Due Doses : </h2>
+                  <ul class="w3-ul" style="text-align: left;color: #465881;width: 100%;">
+                <%if(result.feed!="undefined"){%>
+                  <% var d=new Date();%>
+                  <%var dateObj = new Date();%> 
+                           
+                    <%dateObj.setDate(dateObj.getDate());d.setHours( d.getHours() + 5 );%>
+                    <% dateObj.setMinutes( dateObj.getMinutes() + 30)  %>
+                    <% for(var i=0;i<(result.feed).length;i++){%>
+                    <%const t=dateObj.getTime();%>
+                    <% if((result.feed[i]).date.getTime()<=t){%>
+                  <li class="w3-bar" style="width: 100%;">
+                   <div class="w3-bar-item" style="width: 100%;">
+                    <div class="w3-left">
+                      <span style="font-size: 1.5rem;color:  #ff5d6c;">Name:&emsp;<strong><%=(result.feed[i]).name%></strong></span><br>
+                      <span style="color:  #ff5d6c;">uid: <%=(result.feed[i]).uuid%> &emsp;Vaccine: <%=(result.feed[i]).vcode%>  &emsp;Dated: <%=(result.feed[i]).date%></span>
+                    </div>
+                     <div class="w3-right">
+                         <i id="<%=result.feed[i].phoneno%>" class="fa fa-envelope fa-2x kof"></i>
+                      </div>
+
+                    </div>
+                  </li>
+                  <% } } }%>
+                </ul>
+              </div>
+            </div>
+         </div>
+       </div>
+
+
+
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+          <script src="./js/sms-js.js"></script>
+          <script src="./js/dashboardOnly-js.js"></script>
+          
+    <%- include("partials/dashboard-footer"); -%>

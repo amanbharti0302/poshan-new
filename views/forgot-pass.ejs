@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Login Form</title>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/login-formstyles.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div  id="google_translate_element"></div>
+	<div class="form-container4">
+		<div class="form-section2">
+			<form action="/verifyforgotOTP" method="post" class="form vertical">
+
+			<p class="form-title">Forgot Password</p>
+				<div class="form-group">
+					<input type="text" id="num" name="num" class="otpfield" required placeholder="Enter phone number...">
+				</div>
+				<div class="form-group">
+					<button id="otp">Get OTP</button>
+				</div>
+				<div class="form-group" >
+					<input type="text" name="temp" id="temporary" class="otpfield" placeholder="Enter phone number...">
+				</div>
+
+			<div class="form-group">
+                    <input type="password" disabled="true" required id="password" name="password" placeholder="Enter new password">
+                </div>
+                <div class="form-group">
+                    <input type="password" disabled="true"  required id="Cpassword" name="Cpassword" placeholder="Confirm password">
+                </div>
+
+				<div class="form-group">
+					<button id="submit" disabled="true">Submit</button>
+				</div>
+				<div class="form-group">
+					<a href="/login">Go Back</a>
+				</div>
+			</form>
+		</div>
+
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="./js/forgot-pass.js"></script>
+	<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'bn,en,gu,hi,kn,ml,mr,ta,te,ur', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

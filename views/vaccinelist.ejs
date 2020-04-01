@@ -1,0 +1,204 @@
+<%- include("partials/dashboard-header"); -%>
+<!-- <div class="w3-panel" >
+    <div class="w3-white w3-row-padding formdiv">
+      <form class="">
+<div class="w3-bar w3-xlarge">
+
+        <a class="w3-bar-item" style="color: #465881;width: 5%;" onclick="listcall()"><i class="fa fa-bars"></i></a>
+        <div class="vaccinesearch">
+        <input required class="w3-input w3-hover-light-grey w3-border " type="text" placeholder="Enter UID to search for vaccinations">
+        </div>
+        <a class="w3-bar-item" style="color: #465881;width: 5%;" onclick="searchcall()"><i class="fa fa-search"></i></a>
+</div></form>
+</div>
+</div> -->
+
+
+    
+
+
+<div class="w3-panel" >
+  <div class="w3-white w3-row-padding formdiv">
+    <div class="w3-container">
+      <form class="form-adduser" id="removeform" action="/dashboard/userVaccines" method="post">
+          <div class="w3-row-padding">
+            <div class="field w3-threequarter">
+              <label class="w3-text">UID <span class="w3-text-red">*</span></label>
+              <input required placeholder="Enter uid to see users vaccination" class="w3-input w3-hover-light-grey w3-border" name="uuid" id="uuid" type="text">
+            </div>
+            <div class="w3-quarter buttondiv">
+               <button class="w3-button addusersubmit"  id="checkUserbtn">Search</button>
+              <input type="submit" id="searchUserbtn" style="display:none" class="w3-button addusersubmit" value="Submit">
+            </div> 
+          </div>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<div class="w3-panel w3-half" style="margin-top: 0;">
+  <div class="w3-white w3-row-padding formdiv">
+    <div class="w3-container">
+
+
+        <h3 class="removehead"  id="vaccineListbtn" style="margin-bottom: 24px;margin-right: 0">Vaccines<i class="fa fa-bars w3-right"  style="font-size: 2rem"></i></h3>
+        
+      </div>
+    </div>
+  </div>
+
+<div class="w3-panel w3-half" style="margin-top: 0;">
+  <div class="w3-white w3-row-padding formdiv">
+    <div class="w3-container">
+          <h3 class="removehead" id="addNewVaccinebtn" style="margin-bottom: 24px;margin-right: 0">Add New Vaccine  <i class="fas fa-chevron-down w3-right" style="font-size: 2rem"></i></h3>
+        <form class="form-adduser" action="/dashboard/vaccinelist/addVaccine" method="post" style="display:none" id="addNewVaccine">
+
+
+
+
+          <div class="w3-row-padding">
+            <div class="field">
+              <label class="w3-text">Vaccine Name <span class="w3-text-red">*</span></label>
+              <input required class="w3-input w3-hover-light-grey w3-border" id="name" name="name" type="text">
+            </div>
+          </div>
+          <div class="w3-row-padding">
+            <div class="field">
+              <label class="w3-text">Vaccine Code <span class="w3-text-red">*</span></label>
+              <input required class="w3-input w3-hover-light-grey w3-border" id="vcode" name="vcode" type="text">
+            </div>
+          </div>
+          <div class="w3-row-padding">
+            <div class=" field">
+                <label class="w3-text">Dose <span class="w3-text-red">*</span></label>
+                <input class="w3-input w3-hover-light-grey w3-border" placeholder="in ml" name="dose" type="text">
+              </div>
+          </div>
+          <div class="w3-row-padding">
+            <div class="field" >
+             <label class="w3-text">When to give <span class="w3-text-red">*</span></label>
+                <input required class="w3-input w3-hover-light-grey w3-border" name="when" type="text">
+              </div>
+          </div>
+          <div class="w3-row-padding">
+            <div class="field">
+              <label class="w3-text">Route <span class="w3-text-red">*</span></label>
+              <select required class="w3-input w3-hover-light-grey w3-border" name="route">
+                <option value="intramuscular">Intra-muscular</option>
+                <option value="intradermal">Intra-dermal</option>
+                <option value="oral">Oral</option>
+                <option value="subcutaneous">Sub-cutaneous</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="w3-row-padding">
+            <div class="field">
+              <label class="w3-text">Site <span class="w3-text-red">*</span></label>
+              <select required class="w3-input w3-hover-light-grey w3-border" name="site">
+                <option value="upperarm">Upper Arm</option>
+                <option value="leftupperarm">Left Upper Arm</option>
+                <option value="anterolateralsideofmidthigh">Antero-lateral side of midthigh </option>
+                <option value="oral">Oral</option>
+                <option value="rightupperarm">Right Upper Arm</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="w3-row-padding">
+            <div class=" field">
+              <label class="w3-text">For <span class="w3-text-red">*</span></label>
+              <select required class="w3-input w3-hover-light-grey w3-border" name="for">
+                <option value="infant">Infant (upto 16 months)</option>
+                <option value="children">Children (above 16 months)</option>
+                <option value="women">Women</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="w3-row-padding">
+            
+            <div class="w3-full">
+            <input type="submit" class="w3-button addusersubmit2" value="Add"></div>
+          </div>  
+          
+        </form>
+
+        <!-- <h3 class="removehead" id="removeheader" style="margin-bottom: 24px;margin-right: 0">Remove a User <i class="fas fa-chevron-down w3-right" style="font-size: 2rem"></i></h3> -->
+        
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+ <!-- //////////////////
+
+        //////////////////
+
+    for loop here for vaccine list
+
+    /////////////////////////
+
+    ///////////////////////// -->
+
+
+
+
+
+<div class="w3-container w3-center w3-animate-left" id="list" style="display: none;width: 100%;">
+  <div class="w3-white w3-row-padding formdiv">
+    <div class="w3-container" style="text-align: left;color: #465881;">
+
+
+
+
+  
+
+        <% for(var i=0;i<result.length;i++) { %>
+           <h3 class="removehead oof"  style="margin-bottom: 24px;margin-right: 0" id=<%=result[i].vcode%>><%=result[i].vcode%> <i class="fas fa-chevron-down w3-right" style="font-size: 2rem" ></i></h3>
+           <div class="vaccinelistdiv <%=result[i].vcode%>" style="padding: 0 0 0 16px ;display: none;">
+            <h5><strong>Name:&emsp;</strong><%=result[i].name%></h5>
+             <h5><strong>For:&emsp;</strong><%=result[i].for%></h5>
+             <h5><strong>Dose:&emsp;</strong><%=result[i].dose%> ml</h5>
+             <h5><strong>Site:&emsp;</strong><%=result[i].site%></h5>
+             <h5><strong>Route:&emsp;</strong><%=result[i].route%></h5>
+             <h5><strong>When:&emsp;</strong><%=result[i].when%></h5>
+           </div>
+       <% } %>
+</div>
+</div>
+</div>
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="./js/vaccinelist-js.js"></script>
+
+
+</script>
+
+
+
+<%- include("partials/dashboard-footer"); -%>
