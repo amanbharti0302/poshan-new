@@ -19,7 +19,7 @@
     "express": "^4.17.1",
     "js-alert": "^1.0.4",
     "jsonwebtoken": "^8.5.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "mongoose": "^5.8.5",
     "sendotp": "^1.2.9",
     "twilio": "^3.39.2",
